@@ -2,16 +2,7 @@ package Model.BO;
 
 /*
 *
-<<<<<<< HEAD
-<<<<<<< HEAD
-* @Versão 0.0.1 teste deu certoo kk
-=======
-* @Versão 0.0.1 teste paulo
->>>>>>> origin/master
-=======
-* @Versão 0.0.1 teste paulo 00:03
->>>>>>> origin/master
-*
+ultimo teste se deu squiser vai dar certo hehe
 */
 
 public class Regras {
