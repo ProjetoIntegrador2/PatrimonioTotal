@@ -2,7 +2,7 @@ package Model.BO;
 
 /*
 *
-* @Versão 0.0.1 teste 2 Paulo/Michael 2
+* @Versão 0.0.1 teste
 *
 */
 
