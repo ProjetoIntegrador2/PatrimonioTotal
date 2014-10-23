@@ -2,7 +2,7 @@ package Model.BO;
 
 /*
 *
-ultimo teste se deu squiser vai dar certo hehe mais um.
+teste final
 */
 
 public class Regras {
