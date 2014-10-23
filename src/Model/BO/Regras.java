@@ -1,6 +1,10 @@
 package Model.BO;
 
-
+/*
+*
+* @Versão 0.0.1
+*
+*/
 
 public class Regras {
     

@@ -2,12 +2,24 @@ package Model.Classes;
 
 import java.util.Date;
 
+/*
+*
+* @Versão 0.0.1
+*
+*/
+
 public class Funcionario extends Pessoa{
+    
+    // <editor-fold defaultstate="collapsed" desc="Declaração de atributos">
     
     private int codigoFuncionario;
     private String RG;
     private String CPF;
+    
+    // </editor-fold>
 
+    // <editor-fold defaultstate="collapsed" desc="Getters e Setters">
+    
     public int getCodigoFuncionario() {
         return codigoFuncionario;
     }
@@ -31,4 +43,6 @@ public class Funcionario extends Pessoa{
     public void setCPF(String CPF) {
         this.CPF = CPF;
     }
+    
+    // </editor-fold>
 }
