@@ -6,7 +6,7 @@
 
 package Controller;
 
-import View.JFrameLogin;
+import VIEW.JFrameLogin;
 
 /**
  *
