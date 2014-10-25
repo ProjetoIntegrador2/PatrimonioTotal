@@ -12,7 +12,7 @@ public class Funcionario extends Pessoa{
     
     // <editor-fold defaultstate="collapsed" desc="Declaração de atributos">
     
-    private int codigoFuncionario;
+    private int codigo;
     private String RG;
     private String CPF;
     
@@ -21,11 +21,11 @@ public class Funcionario extends Pessoa{
     // <editor-fold defaultstate="collapsed" desc="Getters e Setters">
     
     public int getCodigoFuncionario() {
-        return codigoFuncionario;
+        return codigo;
     }
 
-    public void setCodigoFuncionario(int codigoFuncionario) {
-        this.codigoFuncionario = codigoFuncionario;
+    public void setCodigoFuncionario(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getRG() {

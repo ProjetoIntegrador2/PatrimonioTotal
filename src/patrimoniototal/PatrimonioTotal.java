@@ -10,13 +10,10 @@ import VIEW.JFrameLogin;
 
 /**
  *
- * @author Paulo
+ * @Versão 0.0.1
  */
 public class PatrimonioTotal {
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         JFrameLogin login = new JFrameLogin();
         login.pack();

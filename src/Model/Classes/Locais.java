@@ -10,27 +10,27 @@ public class Locais {
     
     // <editor-fold defaultstate="collapsed" desc="Declaração de atributos">
     
-    private int codigoLocal;
-    private String descricaoLocal;
+    private int codigo;
+    private String descricao;
     
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Getters e Setters">
     
-    public int getCodigoLocal() {
-        return codigoLocal;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public void setCodigoLocal(int codigoLocal) {
-        this.codigoLocal = codigoLocal;
+    public void setCodigoLocal(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getDescricaoLocal() {
-        return descricaoLocal;
+        return descricao;
     }
 
-    public void setDescricaoLocal(String descricaoLocal) {
-        this.descricaoLocal = descricaoLocal;
+    public void setDescricaoLocal(String descricao) {
+        this.descricao = descricao;
     }
     
     // </editor-fold>

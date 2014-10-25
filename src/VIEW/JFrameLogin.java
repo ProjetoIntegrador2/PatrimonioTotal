@@ -125,9 +125,9 @@ public class JFrameLogin extends javax.swing.JFrame {
                 LFramePrincipal p = new LFramePrincipal();
                 p.show();
             }else
-            JOptionPane.showMessageDialog(this, "senha errada");
+            JOptionPane.showMessageDialog(this, "senha incorreta");
         }else{
-                JOptionPane.showMessageDialog(this, "usuario errada");
+                JOptionPane.showMessageDialog(this, "usuario incorreto");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

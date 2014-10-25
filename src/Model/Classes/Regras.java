@@ -1,8 +1,9 @@
-package Model.BO;
+package Model.Classes;
 
 /*
 *
-teste final
+* @Versão 0.0.1
+*
 */
 
 public class Regras {
@@ -14,7 +15,6 @@ public class Regras {
     }
     
     public int verificaLogin(String login, String senha){
-        String paulo;
         if(login.equalsIgnoreCase("a")){
             if (senha.equals("a")){
                 return 0;
