@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package patrimoniototal;
+package Controller;
 
-import VIEW.JFrameLogin;
+import View.JFrameLogin;
 
 /**
  *
