@@ -5,6 +5,7 @@
  */
 package model;
 
+import Controller.Controlador;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
@@ -19,6 +20,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.swing.JOptionPane;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -55,6 +57,8 @@ public class Funcionario implements Serializable {
     private Date funcionarioDataNasc;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "bemFuncionarioCodigo")
     private Collection<Bem> bemCollection;
+    
+    Controlador controlador = new Controlador();
 
     public Funcionario() {
     }
@@ -90,8 +94,14 @@ public class Funcionario implements Serializable {
     }
 
     public void setFuncionarioCPF(String funcionarioCPF) {
-        this.funcionarioCPF = funcionarioCPF;
+ 
+    if (this.controlador.CPFValido(funcionarioCPF)) {
+         JOptionPane.showMessageDialog(null, "CPF válido.");
+         this.funcionarioCPF = funcionarioCPF; // CPF válido então atribui CPF para propriedade this.CPF
+    } else {
+         JOptionPane.showMessageDialog(null, "CPF Inválido.");
     }
+}
 
     public String getFuncionarioRG() {
         return funcionarioRG;
