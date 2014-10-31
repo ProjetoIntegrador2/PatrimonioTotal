@@ -120,16 +120,17 @@ public class JFrameLogin extends javax.swing.JFrame {
     private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
         this.dispose();
     }//GEN-LAST:event_jBtnSairActionPerformed
-
+  
     private void jBtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEntrarActionPerformed
         Controlador cont = new Controlador();
         if (jTxtUsuario.getText().equals("") || jPwdSenha.getPassword().toString().equals("")) {
             JOptionPane.showMessageDialog(this, "O usuário e a senha não podem estar vazios");
         } else {
             try {
-                if (cont.verificarLogin(jTxtUsuario.getText(), jPwdSenha.getPassword().toString()) == 0) {
+                if (cont.verificarLogin(jTxtUsuario.getText(), String.valueOf(jPwdSenha.getPassword())) == 0) {
                     JFramePrincipal principal = new JFramePrincipal();
                     principal.setVisible(true);
+                    this.dispose();
                 } else if (cont.verificarLogin(jTxtUsuario.getText(), jPwdSenha.getPassword().toString()) == 1) {
                     JOptionPane.showMessageDialog(this, "A senha está errada, favor corrigir");
                 } else {

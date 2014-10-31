@@ -1,6 +1,7 @@
-package AppPatrimonioTotal;
+package Controller;
 
 import View.JFrameLogin;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,6 +15,7 @@ public class AppPatrimonioTotal {
     public static void main(String[] args) {
         JFrameLogin login = new JFrameLogin();
         login.setVisible(true);
+        
     }
     
 }
