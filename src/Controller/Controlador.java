@@ -1,6 +1,6 @@
 package Controller;
 import java.awt.Font;
-import model.Funcionario;
+
 
 /**
  *
@@ -20,10 +20,10 @@ public class Controlador {
         
     }
     
-    private String  funcionarioCPF; 
+    private String  CPF; 
     
-    public boolean CPFValido(String funcionarioCPF) {
-        String strCpf = funcionarioCPF;
+    public boolean CPFValido(String CPF) {
+        String strCpf = CPF;
         if (strCpf.equals("")) {
             return false;
         }

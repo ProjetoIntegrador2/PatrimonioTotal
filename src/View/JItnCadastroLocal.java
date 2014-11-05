@@ -64,6 +64,11 @@ public class JItnCadastroLocal extends JInternalFrame {
         jBtnCancelar.setText("Cancelar");
 
         jBtnExcluir.setText("Excluir");
+        jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnExcluirActionPerformed(evt);
+            }
+        });
 
         jBtnSair.setText("Sair");
 
@@ -145,12 +150,20 @@ public class JItnCadastroLocal extends JInternalFrame {
     private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
         try {
             LocalController local = new LocalController();
-            local.inserirLocal();
+            local.salvarLocal(jTbxDescricao.getText());
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getCause());
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
         
     }//GEN-LAST:event_jBtnSalvarActionPerformed
+
+    private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
+        try {
+            LocalController local = new LocalController();
+            local.excluir(Integer.parseInt(jTbxCodigo.getText()));
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jBtnExcluirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

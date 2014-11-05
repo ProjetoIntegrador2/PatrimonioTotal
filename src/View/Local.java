@@ -3,44 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package View;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
+import javax.persistence.Transient;
 
 /**
  *
  * @author Paulo
  */
 @Entity
-@Table(name = "local")
-@XmlRootElement
+@Table(name = "local", catalog = "patrimoniototal", schema = "")
 @NamedQueries({
     @NamedQuery(name = "Local.findAll", query = "SELECT l FROM Local l"),
     @NamedQuery(name = "Local.findByLocalCodigo", query = "SELECT l FROM Local l WHERE l.localCodigo = :localCodigo"),
     @NamedQuery(name = "Local.findByLocalDescricao", query = "SELECT l FROM Local l WHERE l.localDescricao = :localDescricao")})
 public class Local implements Serializable {
+    @Transient
+    private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "Local_Codigo")
     private Integer localCodigo;
     @Basic(optional = false)
     @Column(name = "Local_Descricao")
     private String localDescricao;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "bemLocalCodigo")
-    private Collection<Bem> bemCollection;
 
     public Local() {
     }
@@ -59,7 +59,9 @@ public class Local implements Serializable {
     }
 
     public void setLocalCodigo(Integer localCodigo) {
+        Integer oldLocalCodigo = this.localCodigo;
         this.localCodigo = localCodigo;
+        changeSupport.firePropertyChange("localCodigo", oldLocalCodigo, localCodigo);
     }
 
     public String getLocalDescricao() {
@@ -67,16 +69,9 @@ public class Local implements Serializable {
     }
 
     public void setLocalDescricao(String localDescricao) {
+        String oldLocalDescricao = this.localDescricao;
         this.localDescricao = localDescricao;
-    }
-
-    @XmlTransient
-    public Collection<Bem> getBemCollection() {
-        return bemCollection;
-    }
-
-    public void setBemCollection(Collection<Bem> bemCollection) {
-        this.bemCollection = bemCollection;
+        changeSupport.firePropertyChange("localDescricao", oldLocalDescricao, localDescricao);
     }
 
     @Override
@@ -101,7 +96,15 @@ public class Local implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Local[ localCodigo=" + localCodigo + " ]";
+        return "View.Local[ localCodigo=" + localCodigo + " ]";
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        changeSupport.addPropertyChangeListener(listener);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        changeSupport.removePropertyChangeListener(listener);
     }
     
 }
